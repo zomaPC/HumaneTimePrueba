@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">HumaneTime</string>
+     <string name="app_name">HumaneTime</string>
+     <string name="login_title">Iniciar sesión</string>
+     <string name="hint_email">Correo electronico </string>
+     <string name="place_email">Ingresar correo</string>
+     <string name="hint_password">Contraseña</string>
+     <string name="place_password">Ingresar contraseña</string>
+     <string name="login_button">Entrar</string>
+     <string name="create_account">Crear cuenta</string>
+     <string name="recover_password">Recuperar contraseña</string>
 </resources>

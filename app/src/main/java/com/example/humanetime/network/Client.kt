@@ -25,7 +25,7 @@ object Client {
             chain.proceed(request)
         }.build()
 
-    val humaneTimeAPI : HumaneTimeAPI = Retrofit.Builder()
+    val humaneTimeAPI: HumaneTimeAPI = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .client(httpClient)
         .addConverterFactory(
@@ -35,5 +35,4 @@ object Client {
         )
         .build()
         .create(HumaneTimeAPI::class.java)
-
 }

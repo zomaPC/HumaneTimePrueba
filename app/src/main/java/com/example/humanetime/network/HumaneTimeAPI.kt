@@ -1,16 +1,25 @@
 package com.example.humanetime.network
 
-import retrofit2.Response
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
+import com.example.humanetime.model.EmployResponse
+import com.example.humanetime.model.EmployeeSearchRequest
+import com.example.humanetime.model.LoginResponse
+import retrofit2.http.Body
+import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface HumaneTimeAPI {
-    @FormUrlEncoded
-    @POST(Constants.BASE_URL)
+
+    @POST(Constants.LOGIN)
     suspend fun login(
-        @Field("email") email: String = Constants.EMAIL,
-        @Field("password") password: String = Constants.PASSWORD
-    ): Response<>
+        @Query("email") email: String,
+        @Query("password") password: String
+    ):LoginResponse
+
+    @POST("/HumaneTime/api/AdministracionEmpleados/BusquedaEmpleado")
+    suspend fun searchEmployee(
+        @Header("Authorization") token: String,
+        @Body requestBody: EmployeeSearchRequest
+    ): EmployResponse
 }
 
