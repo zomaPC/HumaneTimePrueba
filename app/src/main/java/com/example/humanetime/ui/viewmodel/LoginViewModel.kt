@@ -53,8 +53,11 @@ class LoginViewModel(
             val errorCode = response.codigo
             val errorMessage = errorMap.get(errorCode)
 
-            if (errorMessage != null) {
-                _errorMessage.value = errorMessage
+
+            if (errorMessage != null || response.error) {
+
+                _isLoading.value = false
+                _errorMessage.value = errorMessage?: "Error al Iniciar sesion"
 
             } else {
                 _isLoading.value = false
